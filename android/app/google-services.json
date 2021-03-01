@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "381339889015",
+    "project_id": "flash-chat-39e24",
+    "storage_bucket": "flash-chat-39e24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381339889015:android:b42d0615bca3f2e3c90572",
+        "android_client_info": {
+          "package_name": "com.springgle.flashchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381339889015-te41v2ohpai9ak9j39bf6iucgh8moppm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAImXaMAjYBCPlClsjEEGbjwPadkqxtR88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381339889015-te41v2ohpai9ak9j39bf6iucgh8moppm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
