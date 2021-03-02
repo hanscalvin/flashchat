@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'chat_screen.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id='loginScreen';
@@ -30,11 +31,13 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: Container(
-                  height: 200.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               SizedBox(
@@ -86,7 +89,25 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, ChatScreen.id);
                       }
                     } catch(e){
-                      print(e);//create new user entry using firebase method
+                      print(e);
+                      Alert(
+                        context: context,
+                        title: "Log In Failed",
+                        desc: e.toString().substring(1 + e.toString().indexOf('] ')),
+                        type: AlertType.error,
+                        buttons: [
+                          DialogButton(
+                            child: Text(
+                              "Try Again",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            width: 120,
+                          )
+                        ],
+                      ).show();//create new user entry using firebase method
                     }
                     setState(() {
                       showSpinner = false;
